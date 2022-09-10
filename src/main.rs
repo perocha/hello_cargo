@@ -1,27 +1,10 @@
 use crate::utils::module::test_function;
+use crate::utils::extra::simple_calc;
 mod utils;
 
 // Simple print function, very basic log :-)
 fn my_print(function_name: &str, message: &str, counter: u32) {
     println!("{}::{}:{}", function_name, message, counter);
-}
-
-/// Simple calculation
-///
-/// Adding unit testing
-///
-/// # Examples
-/// ```
-/// let result = doccomments::simple_calc(10, 2);
-/// assert_eq!(result, 20);
-/// ```
-fn simple_calc(first_arg: u32, second_arg: u32) -> u32 {
-    if first_arg > second_arg {
-        println!("The first argument needs to be higher than the second!!");
-        return 0;
-    }
-
-    first_arg * second_arg
 }
 
 fn main() {
@@ -77,10 +60,12 @@ fn main() {
     my_print(func_name, message, counter);
 
     // Call function
-    let mut result = simple_calc (5, 6);
+    let mut result = simple_calc (9, 6);
     println!("First result {}", result);
     result = simple_calc(4, 3);
     println!("Second result {}", result);
+    result = simple_calc(2, 5);
+    println!("Third result {}", result);
 
     // Call a function from a module
     test_function ();
