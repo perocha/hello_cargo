@@ -17,6 +17,7 @@ pub fn test_function() {
     );
 }
 
+// Area
 fn area(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
 }

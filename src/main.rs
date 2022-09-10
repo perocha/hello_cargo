@@ -1,13 +1,20 @@
-use crate::test_module::test_function;
-
-pub mod test_module;
+use crate::utils::module::test_function;
+mod utils;
 
 // Simple print function, very basic log :-)
 fn my_print(function_name: &str, message: &str, counter: u32) {
     println!("{}::{}:{}", function_name, message, counter);
 }
 
-// Simple calculation
+/// Simple calculation
+///
+/// Adding unit testing
+///
+/// # Examples
+/// ```
+/// let result = doccomments::simple_calc(10, 2);
+/// assert_eq!(result, 20);
+/// ```
 fn simple_calc(first_arg: u32, second_arg: u32) -> u32 {
     if first_arg > second_arg {
         println!("The first argument needs to be higher than the second!!");
