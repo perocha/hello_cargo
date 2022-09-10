@@ -1,5 +1,6 @@
 use crate::utils::module::test_function;
 use crate::utils::extra::*;
+use crate::utils::hashmap::execute;
 mod utils;
 use rand::prelude::*;
 
@@ -86,4 +87,7 @@ fn main() {
         let my_random_num: u8 = rng.gen();
         println!("And these are more random numbers!! {} {}", _i, my_random_num);
     }
+
+    // Call a function with the hashmap
+    execute ();
 }
