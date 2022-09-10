@@ -1,5 +1,5 @@
 use crate::utils::module::test_function;
-use crate::utils::extra::simple_calc;
+use crate::utils::extra::*;
 mod utils;
 
 // Simple print function, very basic log :-)
@@ -66,6 +66,12 @@ fn main() {
     println!("Second result {}", result);
     result = simple_calc(2, 5);
     println!("Third result {}", result);
+
+    // Call another function
+    let my_number = 5;
+    if is_even(my_number) {
+        println!("{} is even", my_number);
+    }
 
     // Call a function from a module
     test_function ();
