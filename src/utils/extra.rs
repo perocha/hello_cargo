@@ -1,12 +1,4 @@
-/// Simple calculation
-///
-/// Adding unit testing
-///
-/// # Examples
-/// ```
-/// let result = doccomments::simple_calc(10, 2);
-/// assert_eq!(result, 20);
-/// ```
+// Simple calculation
 pub fn simple_calc(first_arg: u32, second_arg: u32) -> u32 {
     if first_arg < second_arg {
         println!("The first argument needs to be higher than the second!!");
