@@ -1,3 +1,7 @@
+use crate::test_module::test_function;
+
+pub mod test_module;
+
 // Simple print function, very basic log :-)
 fn my_print(function_name: &str, message: &str, counter: u32) {
     println!("{}::{}:{}", function_name, message, counter);
@@ -70,4 +74,8 @@ fn main() {
     println!("First result {}", result);
     result = simple_calc(4, 3);
     println!("Second result {}", result);
+
+    // Call a function from a module
+    test_function ();
+
 }
