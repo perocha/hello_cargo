@@ -1,6 +1,7 @@
 use crate::utils::module::test_function;
 use crate::utils::extra::*;
 mod utils;
+use rand::prelude::*;
 
 // Simple print function, very basic log :-)
 fn my_print(function_name: &str, message: &str, counter: u32) {
@@ -76,4 +77,13 @@ fn main() {
     // Call a function from a module
     test_function ();
 
+    // Use an imported crate
+    let mut rng = rand::thread_rng();
+    let random_number: u8 = rng.gen();
+    println!("My random number: {}", random_number);
+
+    for _i in 1..20 {
+        let my_random_num: u8 = rng.gen();
+        println!("And these are more random numbers!! {} {}", _i, my_random_num);
+    }
 }
