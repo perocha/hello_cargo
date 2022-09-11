@@ -57,13 +57,42 @@ fn build_car(order: i32, miles: u32) -> Car {
 }
 
 pub fn execute() {
+    // Initialize a hash map for the car orders
+    use std::collections::HashMap;
+    let mut orders: HashMap<i32, Car> = HashMap::new();
+
     // Initialize counter variable
     let mut order = 1;
     // Declare a car as mutable "Car" struct
     let mut car: Car;
 
-    // Car order #1: Used, Hard top
+    // Car order #1
     car = build_car(order, 1000);
-    println!("{}: {:?}, Hard top = {}, {:?}, {}, {} miles", order, car.age.0, car.roof, car.motor, car.color, car.age.1);
+    orders.insert(order, car);
+    order = order + 1;
+
+    // Car order #2
+    car = build_car(order, 0);
+    orders.insert(order, car);
+    order = order + 1;
+
+    // Car order #3
+    car = build_car(order, 10);
+    orders.insert(order, car);
+    order = order + 1;
+
+    // Car order #4
+    car = build_car(order, 23023);
+    orders.insert(order, car);
+    order = order + 1;
+
+    // Car order #5
+    car = build_car(order, 0);
+    orders.insert(order, car);
+    order = order + 1;
+
+    for _i in 1..order {
+        println!("Car order {}: {:?}", _i, orders.get(&_i));
+    }
 
 }
