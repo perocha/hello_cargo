@@ -59,38 +59,28 @@ fn build_car(order: i32, miles: u32) -> Car {
 pub fn execute() {
     // Initialize a hash map for the car orders
     let mut orders: HashMap<i32, Car> = HashMap::new();
-
-    // Initialize counter variable
-    let mut order = 1;
     // Declare a car as mutable "Car" struct
     let mut car: Car;
 
-    // Car order #1
-    car = build_car(order, 1000);
-    orders.insert(order, car);
-    order = order + 1;
+    // Use miles variable for order variety inside the loop
+    let mut miles = 0;
 
-    // Car order #2
-    car = build_car(order, 0);
-    orders.insert(order, car);
-    order = order + 1;
+    // Build 6 cars
+    for order in 1..6 {
+        // Build a new car
+        car = build_car(order, miles);
+        // Add the new car to the hashmap
+        orders.insert(order, car);
 
-    // Car order #3
-    car = build_car(order, 10);
-    orders.insert(order, car);
-    order = order + 1;
+        // Reset miles to have some variety
+        if miles == 2100 {
+            miles = 0;
+        } else {
+            miles = miles + 700;
+        }
+    }
 
-    // Car order #4
-    car = build_car(order, 23023);
-    orders.insert(order, car);
-    order = order + 1;
-
-    // Car order #5
-    car = build_car(order, 0);
-    orders.insert(order, car);
-    order = order + 1;
-
-    for _i in 1..order {
+    for _i in 1..6 {
         println!("Car order {}: {:?}", _i, orders.get(&_i));
     }
 
