@@ -28,6 +28,8 @@ fn car_quality (miles: u32) -> (Age, u32) {
 fn build_car(order: i32, miles: u32) -> Car {
     let colors = ["Blue", "Green", "Red", "Silver"];
 
+
+/*
     // Prevent panic: Check color index for colors array, reset as needed
     // Valid color = 1, 2, 3, or 4
     // If color > 4, reduce color to valid index
@@ -35,6 +37,11 @@ fn build_car(order: i32, miles: u32) -> Car {
     if color > 4 {        
         // color = 5 --> index 1, 6 --> 2, 7 --> 3, 8 --> 4
         color = color - 4;
+    }
+*/
+    let mut color = order as usize;
+    while color > 4 {
+        color -= 4;
     }
 
     // Add variety to orders for motor type and roof type
@@ -65,8 +72,11 @@ pub fn execute() {
     // Use miles variable for order variety inside the loop
     let mut miles = 0;
 
+    // How many cars are we building?
+    let number_of_cars = 12;
+
     // Build 6 cars
-    for order in 1..6 {
+    for order in 1..number_of_cars+1 {
         // Build a new car
         car = build_car(order, miles);
         // Add the new car to the hashmap
@@ -80,7 +90,7 @@ pub fn execute() {
         }
     }
 
-    for _i in 1..6 {
+    for _i in 1..number_of_cars+1 {
         println!("Car order {}: {:?}", _i, orders.get(&_i));
     }
 
