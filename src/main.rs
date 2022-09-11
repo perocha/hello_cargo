@@ -1,6 +1,7 @@
 use crate::utils::module::test_function;
 use crate::utils::extra::*;
 use crate::utils::hashmap::execute;
+use crate::utils::loops::execute_loops;
 mod utils;
 use rand::prelude::*;
 
@@ -88,6 +89,9 @@ fn main() {
         println!("And these are more random numbers!! {} {}", _i, my_random_num);
     }
 
-    // Call a function with the hashmap
+    // Call a function with the hashmap (from module hashmap.rs)
     execute ();
+
+    // Call a function with lots of loop examples
+    execute_loops ();
 }

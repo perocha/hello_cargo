@@ -58,7 +58,6 @@ fn build_car(order: i32, miles: u32) -> Car {
 
 pub fn execute() {
     // Initialize a hash map for the car orders
-    use std::collections::HashMap;
     let mut orders: HashMap<i32, Car> = HashMap::new();
 
     // Initialize counter variable
