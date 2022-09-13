@@ -2,6 +2,8 @@ use crate::utils::module::test_function;
 use crate::utils::extra::*;
 use crate::utils::hashmap::execute;
 use crate::utils::loops::execute_loops;
+use crate::utils::error_handling::error_examples;
+use crate::utils::file_handle::file_handle_example;
 mod utils;
 use rand::prelude::*;
 
@@ -94,4 +96,10 @@ fn main() {
 
     // Call a function with lots of loop examples
     execute_loops ();
+
+    // Call a function with some examples on error handling
+    error_examples();
+
+    // Call a funtion that handles a file
+    file_handle_example();
 }
