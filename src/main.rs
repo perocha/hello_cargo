@@ -4,6 +4,7 @@ use crate::utils::hashmap::execute;
 use crate::utils::loops::execute_loops;
 use crate::utils::error_handling::error_examples;
 use crate::utils::file_handle::file_handle_example;
+use crate::utils::memory_handling::memory_examples;
 mod utils;
 use rand::prelude::*;
 
@@ -102,4 +103,7 @@ fn main() {
 
     // Call a funtion that handles a file
     file_handle_example();
+
+    // Call function to test memory handling
+    memory_examples();
 }

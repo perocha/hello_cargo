@@ -4,3 +4,4 @@ pub mod hashmap;
 pub mod loops;
 pub mod error_handling;
 pub mod file_handle;
+pub mod memory_handling;
