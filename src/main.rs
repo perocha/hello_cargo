@@ -6,6 +6,7 @@ use crate::utils::error_handling::error_examples;
 use crate::utils::file_handle::file_handle_example;
 use crate::utils::memory_handling::memory_examples;
 use crate::utils::generic_data_types::generic_data_types_examples;
+use crate::utils::iterator::iterator_example;
 mod utils;
 use rand::prelude::*;
 
@@ -110,4 +111,7 @@ fn main() {
 
     // Call a function to test generic data types
     generic_data_types_examples();
+
+    // Function with iterator example
+    iterator_example();
 }
