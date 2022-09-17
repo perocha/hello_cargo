@@ -44,6 +44,24 @@ pub fn memory_examples() {
     let result = my_longest_word(&magic1, &magic2);
     println!("The longest magic word is {}", result);
 
+    // Exercise solution
+    let my_name1 = "Pedro";
+    let my_name2 = "Maria";
+    let my_name3 = "Pepe";
+
+    let mut names = Vec::new();
+
+    assert_eq!("Pedro", copy_and_return_function (&mut names, &my_name1));
+    assert_eq!("Maria", copy_and_return_function (&mut names, &my_name2));
+    assert_eq!("Pepe", copy_and_return_function (&mut names, &my_name3));
+
+    assert_eq!(
+        names,
+        vec!["Pedro".to_string(), "Maria".to_string(), "Pepe".to_string()]
+    );
+
+    println!("Vector::{:?}", names);
+
 }
 
 // Function passing String argument will get ownership of var input
@@ -75,4 +93,10 @@ fn my_longest_word<'lifetime>(first_string: &'lifetime String, second_string: &'
     } else {
         second_string
     }
+}
+
+// Function to copy input value to a vector and returns it
+fn copy_and_return_function<'lifetime> (input_vector: &'lifetime mut Vec<String>, value: &'lifetime str) -> &'lifetime String {
+    input_vector.push(String::from(value));
+    return input_vector.get(input_vector.len() - 1).unwrap();
 }
