@@ -28,6 +28,22 @@ pub fn memory_examples() {
     my_process_int (my_int);
     my_process_int (my_int);
 
+    // Simple use of reference var
+    let x;
+    let y = 42;
+    {
+        x = &y;
+    }
+    println!("x: {}", x);
+    println!("y: {}", y);
+
+    // String handling with lifetime in function my_longest_word
+    let magic1 = String::from("abracadabra!");
+    let magic2 = String::from("shazam!");
+
+    let result = my_longest_word(&magic1, &magic2);
+    println!("The longest magic word is {}", result);
+
 }
 
 // Function passing String argument will get ownership of var input
@@ -50,4 +66,13 @@ fn my_process_string_ref_mutable (input: &mut String) {
 // Function passing u32 argument will *NOT* get ownership of var input, since int is a "copy" type
 fn my_process_int (input: u32) {
     println!("my_process_int::input {}", input);
+}
+
+// Function that returns the longest string of 2 inputs, with lifetime annotation
+fn my_longest_word<'lifetime>(first_string: &'lifetime String, second_string: &'lifetime String) -> &'lifetime String {
+    if first_string.len() > second_string.len() {
+        first_string
+    } else {
+        second_string
+    }
 }
